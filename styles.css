@@ -1,0 +1,482 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Section container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image de Héros */
+.hero {
+    background-image: url('equipe.png');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5); /* Ajoute une superposition sombre pour rendre le texte lisible */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero-text h1.highlight {
+    font-size: 4rem; /* Taille de police plus grande pour le nom */
+    color: #ff6600; /* Couleur orange pour faire ressortir */
+    text-transform: uppercase; /* Convertit le texte en majuscules */
+    font-weight: bold;
+    letter-spacing: 2px; /* Espacement des lettres pour donner plus de style */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Ajoute un effet d'ombre */
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-text p {
+    color: white;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.cta {
+    padding: 12px 30px;
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.cta:hover {
+    background: #e65c00;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/* Section */
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-dark {
+    background-color: #333;
+    color: white;
+}
+
+/* About Grid */
+.about-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Section Sécurité Routière */
+#securite-routiere {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+.security-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.security-image, .security-text {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.security-image img, .security-text img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Section Sponsors */
+#sponsors {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.sponsor-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.sponsor-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-10px);
+}
+
+.sponsor-logo img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ff6600;
+}
+
+.sponsor-info {
+    padding: 20px;
+}
+
+.sponsor-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.sponsor-info p {
+    font-size: 1rem;
+    color: #777;
+}
+
+@media screen and (max-width: 768px) {
+    .sponsor-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* Responsiveness pour mobiles */
+@media screen and (max-width: 768px) {
+    .security-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* Responsiveness pour l'about section */
+@media screen and (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Vidéo responsive */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Galerie (Carrousel) */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.carousel img {
+    width: 300px; /* Largeur fixe pour les grands écrans */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    scroll-snap-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel img {
+        width: 100%; /* Adaptation sur les petits écrans */
+        height: auto;
+    }
+}
+
+/* Section Sécurité Routière */
+#securite-routiere {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #444, #222);
+    color: white;
+    text-align: center;
+}
+
+#securite-routiere h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #ffcc00; /* Couleur jaune pour attirer l'attention */
+}
+
+#securite-routiere .intro-text {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ccc;
+}
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.security-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.security-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.security-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.security-caption h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Même couleur que le titre pour cohérence */
+}
+
+.security-caption p {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+/* Section Sécurité Routière 2 */
+#securite {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #222, #444);
+    text-align: center;
+    color: white;
+}
+
+#securite h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffcc00;
+}
+
+#securite .intro-text {
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ddd;
+}
+
+/* Icon Grid */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: stretch;
+}
+
+.icon-card {
+    background-color: #333;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.icon-box img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.icon-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+.icon-card p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .icon-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .icon-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .security-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Section Contact */
+#contact {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #333, #222);
+    color: white;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Bouton de contact esthétique */
+.contact-btn {
+    padding: 15px 40px;
+    background-color: #ff6600;
+    color: white;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.4s, box-shadow 0.4s, transform 0.2s;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-btn:hover {
+    background-color: #e65c00;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px); /* Légère montée au survol */
+}
+
+.contact-btn:active {
+    transform: translateY(2px); /* Effet clic */
+}
+
+
+/* Section Sponsors */
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sponsor-logos img {
+    width: 150px;
+}
+
+@media screen and (max-width: 768px) {
+    .sponsor-logos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sponsor-logos img {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-icons img {
+    width: 30px;  /* Taille plus petite pour l'icône Instagram */
+    height: auto;  /* Maintient le ratio aspect de l'image */
+    margin: 0 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .footer-social img {
+        width: 25px;
+    }
+}
